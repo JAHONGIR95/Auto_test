@@ -16,13 +16,13 @@ function aTagsCreator(){
 
 var quizNum = 0;
 let time = setInterval(() => {
-    // aTagsCreator();
+    aTagsCreator();
 
-    if(quizNum >= 20){
+    if(quizNum > 20){
         clearInterval(time);
     } else {
         quizNum++;
     }
     console.log(quizNum);
-}, 200);
+}, 500);
 
