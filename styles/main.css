@@ -48,9 +48,27 @@ h1, h2, h3, h4, h5, h6, p, a {
 
 .quiz__options {
   width: 94%;
-  min-height: 300px;
+  height: 70%;
   background-color: #fff;
   margin-right: auto;
   margin-left: auto;
+  padding: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow-y: scroll;
+}
+
+.quiz__options .question-area {
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  background-color: blue;
+  margin-bottom: 25px;
 }
 /*# sourceMappingURL=main.css.map */
