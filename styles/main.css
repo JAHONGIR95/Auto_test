@@ -6,8 +6,8 @@ body {
 
 .section1 {
   width: 100%;
-  height: 0;
-  background: url(../images/level-bg.jpg), rgba(0, 0, 0, 0.2);
+  height: 100vh;
+  background: url(../images/level-bg.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -20,6 +20,8 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
+  z-index: 0;
 }
 
 .section1 .banner {
