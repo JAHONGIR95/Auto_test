@@ -75,7 +75,6 @@ body{
     &.active{
         height: 100vh;
         position: relative;
-        overflow: hidden;
 
         &::before{
             content: "";
@@ -118,10 +117,9 @@ h1, h2, h3, h4, h5, h6, p, a{
 }
 
 .quiz{
-    width: 90%;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    // overflow: hidden;
+    width: 94%;
+    margin-top: 30px;
+    margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
     padding: 25px;
@@ -133,20 +131,21 @@ h1, h2, h3, h4, h5, h6, p, a{
         align-items: center;
         margin-left: auto;
         margin-right: auto;
-        background-color: rgba(189, 189, 189, .7);
+        background-color: rgba(189, 189, 189, .8);
         border-radius: 5px;
-        margin-bottom: 35px;
+        margin-bottom: 25px;
+        border: 1px solid #fff;
+        // ichki box shadow yozishimiz kerak
     }
 
     &__options{
         width: 94%;
-        height: 70%;
+        height: calc(100% - 135px);
         background-color: #000;
         margin-right: auto;
         margin-left: auto;
         padding: 25px;
         display: flex;
-        // align-items: flex-start;
         justify-content: space-between;
         flex-wrap: wrap;
         overflow-y: scroll;

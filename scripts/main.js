@@ -8,16 +8,30 @@ let startBtn = document.querySelector('#start-btn');
 let sectionOne = document.querySelector('.section1');
 // section 2 class bilan chaqiriladi
 let sectionTwo = document.querySelector('.section2');
+// testning levelini tanlash uchun select bu - 
+let levelForTest = document.querySelector('#level-for-test');
 
-//
+// sahifa yuklangandagi ilk bajariladagan holat va funksiyalar bu -
+window.addEventListener('load', ()=> {
+    aTagsCreator(levelForTest.value)
+})
+
+// level tanlash selecti o'zgartirilganda savollar soni uchun ochiladigan maydor ham o'zgaradigan holatdir bu -
+levelForTest.addEventListener('change', function(){
+    aTagsCreator(levelForTest.value)
+})
+// start button bosilganda savollar oynasining ochilish hodisasi
 startBtn.addEventListener('click', function(){
     sectionOne.classList.remove('active');  
     sectionTwo.classList.add('active');  
 })
 
 // rasm chiqadigan maydonlarni yaratadigan function bu - 
-function aTagsCreator(){
-    for(i = 1; i <= 20; i++){
+function aTagsCreator(processLength){
+    // bu code maydonni tozalab tashlash uchun ishlatiladi
+    quizOptions.textContent = '';
+
+    for(i = 1; i <= processLength; i++){
         let aTag = document.createElement('a');
         let image = document.createElement('img');
         aTag.setAttribute('class', 'question-area');
@@ -27,4 +41,3 @@ function aTagsCreator(){
     }
 }
 
-aTagsCreator();
