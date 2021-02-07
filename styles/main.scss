@@ -126,6 +126,7 @@ h1, h2, h3, h4, h5, h6, p, a{
     padding: 25px;
     background-color: rgba(204, 185, 185, 0.6);
 
+    // savollar paydo bo'ladigan maydon
     &__question{
         height: 60px;
         display: flex;
@@ -139,6 +140,7 @@ h1, h2, h3, h4, h5, h6, p, a{
         border: 1px solid #fff;
         box-shadow: inset 0 0 15px 10px rgba(99, 85, 85, 0.6);
 
+        // savol font ning style
         .question-space{
            color: rgb(245, 236, 236);
            text-shadow: 2px 2px 5px #000;
@@ -147,6 +149,7 @@ h1, h2, h3, h4, h5, h6, p, a{
         }
     }
 
+    // variantlar chiqadigan maydon
     &__options{
         width: 94%;
         height: calc(100% - 135px);
@@ -159,12 +162,19 @@ h1, h2, h3, h4, h5, h6, p, a{
         flex-wrap: wrap;
         overflow-y: scroll;
 
+        // rasmlar ko'rinadigan maydonlar
         .question-area{
             display: inline-block;
             width: 120px;
             height: 120px;
             background-color: blue;
             margin-bottom: 10px;
+
+            .image-area{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
         }
     }
 }

@@ -1,3 +1,24 @@
+let signsArr = [
+    {
+        id: 1,
+        title: `Shlagbaumli temir yo'l kesishmasi`,
+        source: `../images/signs/1.gif`
+    },
+
+    // {
+    //     id: 1,
+    //     title: '',
+    //     source: ''
+    // },
+    
+    // {
+    //     id: 1,
+    //     title: '',
+    //     source: ''
+    // },
+]
+console.log(signsArr[0].source);
+
 // savol chiqadigan maydon
 let quizQuestion = document.querySelector('#quiz__question');
 // savollar yachaykasi bu
@@ -32,8 +53,10 @@ function aTagsCreator(processLength){
     quizOptions.textContent = '';
 
     for(i = 1; i <= processLength; i++){
-        let aTag = document.createElement('a');
+        let aTag = document.createElement('a'); // buttonga almashtirish
         let image = document.createElement('img');
+        image.setAttribute('src', `../images/signs/1.gif`);
+        image.setAttribute('class', 'image-area');
         aTag.setAttribute('class', 'question-area');
     
         quizOptions.appendChild(aTag);
