@@ -53,9 +53,9 @@ function aTagsCreator(processLength){
     quizOptions.textContent = '';
 
     for(i = 1; i <= processLength; i++){
-        let aTag = document.createElement('a'); // buttonga almashtirish
+        let aTag = document.createElement('button');
         let image = document.createElement('img');
-        image.setAttribute('src', `../images/signs/1.gif`);
+        image.setAttribute('src', `${signsArr[0].source}`);
         image.setAttribute('class', 'image-area');
         aTag.setAttribute('class', 'question-area');
     

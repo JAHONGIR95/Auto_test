@@ -179,7 +179,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 .quiz__options {
   width: 94%;
   height: calc(100% - 135px);
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.319);
   margin-right: auto;
   margin-left: auto;
   padding: 25px;
@@ -198,8 +198,22 @@ h1, h2, h3, h4, h5, h6, p, a {
   display: inline-block;
   width: 120px;
   height: 120px;
-  background-color: blue;
+  background-color: #bda6a6;
   margin-bottom: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px;
+  -webkit-transition: all ease .5s;
+  transition: all ease .5s;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.quiz__options .question-area:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  background-color: #b49b9b;
 }
 
 .quiz__options .question-area .image-area {
