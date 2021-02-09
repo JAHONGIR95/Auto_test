@@ -225,6 +225,8 @@ let sectionOne = document.querySelector('.section1');
 let sectionTwo = document.querySelector('.section2');
 // testning levelini tanlash uchun select bu - 
 let levelForTest = document.querySelector('#level-for-test');
+// savol maydonchasi
+let questionSpace = document.querySelector('#question-space');
 
 // sahifa yuklangandagi ilk bajariladagan holat va funksiyalar bu -
 // window.addEventListener('load', () => {
@@ -246,16 +248,20 @@ startBtn.addEventListener('click', function () {
 
 // rasm chiqadigan maydonlarni yaratadigan function bu - 
 function aTagsCreator(processLength) {
-    console.log(processLength);
+    console.log('level' + processLength);
     // bu code maydonni tozalab tashlash uchun ishlatiladi
     randomSelectingItems(processLength);
     quizOptions.textContent = '';
+    let randomNumberTitle = getRandomInt(processLength);
+    console.log('random ' + randomNumberTitle);
     for (i = 1; i <= processLength; i++) {
         let aTag = document.createElement('button');
         let image = document.createElement('img');
         image.setAttribute('src', `${selectedArr[i-1].source}`);
         image.setAttribute('class', 'image-area');
         aTag.setAttribute('class', 'question-area');
+        questionSpace.textContent = selectedArr[randomNumberTitle].title;
+        questionSpace.setAttribute('data-id', selectedArr[randomNumberTitle].id)
 
         quizOptions.appendChild(aTag);
         aTag.appendChild(image);
@@ -270,8 +276,10 @@ function randomSelectingItems(num) {
         if (!selectedArr.includes(signsArr[randomNumber])) {
             selectedArr.push(signsArr[randomNumber]);
             i++;
-
+            
+            
         }
     }
+    console.log('arr' + selectedArr.length);
     // console.log(selectedArr);
 }
