@@ -255,10 +255,13 @@ function aTagsCreator(processLength) {
     let randomNumberTitle = getRandomInt(processLength);
     console.log('random ' + randomNumberTitle);
     for (i = 1; i <= processLength; i++) {
+    // let randomNumberImage = getRandomInt(processLength);
+        
         let aTag = document.createElement('button');
         let image = document.createElement('img');
         image.setAttribute('src', `${selectedArr[i-1].source}`);
         image.setAttribute('class', 'image-area');
+        image.setAttribute('data-image-id', selectedArr[i-1].id)
         aTag.setAttribute('class', 'question-area');
         questionSpace.textContent = selectedArr[randomNumberTitle].title;
         questionSpace.setAttribute('data-id', selectedArr[randomNumberTitle].id)
@@ -281,5 +284,5 @@ function randomSelectingItems(num) {
         }
     }
     console.log('arr' + selectedArr.length);
-    // console.log(selectedArr);
+    console.log(selectedArr);
 }
