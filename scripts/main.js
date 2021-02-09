@@ -1,5 +1,5 @@
-let signsArr = [
-    {
+// bu array barcha belgilar, ularning nomi kiritilgan
+let signsArr = [{
         id: 1,
         title: `1.1 Shlagbaumli temir yo'l kesishmasi`,
         source: `../images/signs/1.gif`
@@ -199,8 +199,19 @@ let signsArr = [
         title: `1.29 Tonnel`,
         source: `../images/signs/40.gif`
     },
-   
 ]
+
+// tasodifiy tanlab olingan object lar uchun arraydir bu - 
+let selectedArr = [];
+
+// random funksiyasi keltirilgan bu yerda
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+}
+
+
+
+
 
 // savol chiqadigan maydon
 let quizQuestion = document.querySelector('#quiz__question');
@@ -216,35 +227,51 @@ let sectionTwo = document.querySelector('.section2');
 let levelForTest = document.querySelector('#level-for-test');
 
 // sahifa yuklangandagi ilk bajariladagan holat va funksiyalar bu -
-window.addEventListener('load', ()=> {
-    aTagsCreator(levelForTest.value)
-})
+// window.addEventListener('load', () => {
+//     aTagsCreator(levelForTest.value);
+// })
 
 // level tanlash selecti o'zgartirilganda savollar soni uchun ochiladigan maydor ham o'zgaradigan holatdir bu -
-levelForTest.addEventListener('change', function(){
-    aTagsCreator(levelForTest.value)
-})
+levelForTest.addEventListener('change', (e) => aTagsCreator(e.target.value))
+
 // start button bosilganda savollar oynasining ochilish hodisasi
-startBtn.addEventListener('click', function(){
-    sectionOne.classList.remove('active');  
-    sectionTwo.classList.add('active');  
+startBtn.addEventListener('click', function () {
+    sectionOne.classList.remove('active');
+    sectionTwo.classList.add('active');
+
+    
+    aTagsCreator(levelForTest.value)
+
 })
 
 // rasm chiqadigan maydonlarni yaratadigan function bu - 
-function aTagsCreator(processLength){
-
+function aTagsCreator(processLength) {
+    console.log(processLength);
     // bu code maydonni tozalab tashlash uchun ishlatiladi
+    randomSelectingItems(processLength);
     quizOptions.textContent = '';
-
-    for(i = 1; i <= processLength; i++){
+    for (i = 1; i <= processLength; i++) {
         let aTag = document.createElement('button');
         let image = document.createElement('img');
-        image.setAttribute('src', `${signsArr[0].source}`);
+        image.setAttribute('src', `${selectedArr[i-1].source}`);
         image.setAttribute('class', 'image-area');
         aTag.setAttribute('class', 'question-area');
-    
+
         quizOptions.appendChild(aTag);
         aTag.appendChild(image);
     }
 }
 
+function randomSelectingItems(num) {
+
+    for (i = 1; i <= num;) {
+
+        let randomNumber = getRandomInt(signsArr.length);
+        if (!selectedArr.includes(signsArr[randomNumber])) {
+            selectedArr.push(signsArr[randomNumber]);
+            i++;
+
+        }
+    }
+    // console.log(selectedArr);
+}
