@@ -253,7 +253,6 @@ function aTagsCreator(processLength) {
     randomSelectingItems(processLength);
     quizOptions.textContent = '';
     let randomNumberTitle = getRandomInt(processLength);
-    console.log('random ' + randomNumberTitle);
     for (i = 1; i <= processLength; i++) {
     // let randomNumberImage = getRandomInt(processLength);
         
@@ -261,15 +260,40 @@ function aTagsCreator(processLength) {
         let image = document.createElement('img');
         image.setAttribute('src', `${selectedArr[i-1].source}`);
         image.setAttribute('class', 'image-area');
-        image.setAttribute('data-image-id', selectedArr[i-1].id)
+        aTag.setAttribute('data-image-id', selectedArr[i-1].id)
         aTag.setAttribute('class', 'question-area');
         questionSpace.textContent = selectedArr[randomNumberTitle].title;
         questionSpace.setAttribute('data-id', selectedArr[randomNumberTitle].id)
-
+        
         quizOptions.appendChild(aTag);
         aTag.appendChild(image);
     }
+
+    let btn = document.querySelectorAll('.question-area');
+    console.log(btn);
+    // let images = document.querySelectorAll('.image-area');
+    btn.forEach(button => {
+        button.addEventListener('click', () => {
+            if (button.dataset.imageId == questionSpace.dataset.id) {
+                button.style.opacity = '.6';
+                button.style.backgroundColor = 'grey';
+                button.disabled = true;  
+                selectedArr = selectedArr.filter(el => el.id != button.dataset.imageId)
+                console.log(selectedArr);
+
+                let randomNumberTitle = getRandomInt(selectedArr.length);
+                questionSpace.textContent = selectedArr[randomNumberTitle].title;
+            }
+
+            else{
+                button.classList.add('wrong-border');
+
+            }
+        })
+    })
 }
+
+
 
 function randomSelectingItems(num) {
 
@@ -283,6 +307,4 @@ function randomSelectingItems(num) {
             
         }
     }
-    console.log('arr' + selectedArr.length);
-    console.log(selectedArr);
 }

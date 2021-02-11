@@ -210,6 +210,10 @@ h1, h2, h3, h4, h5, h6, p, a {
   overflow: hidden;
 }
 
+.quiz__options .question-area.wrong-border {
+  border: 5px solid #43df1c;
+}
+
 .quiz__options .question-area:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);

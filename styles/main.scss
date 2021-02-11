@@ -177,6 +177,13 @@ h1, h2, h3, h4, h5, h6, p, a{
             border-radius: 5px;
             overflow: hidden;
 
+            &.wrong-border{
+                border: 5px solid rgb(67, 223, 28);
+            }
+            &.correct-border{
+                
+            }
+
             &:hover{
                 transform: scale(1.05);
                 background-color: #b49b9b;
@@ -190,4 +197,5 @@ h1, h2, h3, h4, h5, h6, p, a{
         }
     }
 }
+
 
