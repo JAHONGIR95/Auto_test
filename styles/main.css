@@ -211,6 +211,10 @@ h1, h2, h3, h4, h5, h6, p, a {
 }
 
 .quiz__options .question-area.wrong-border {
+  border: 5px solid #fa0606;
+}
+
+.quiz__options .question-area.correct-border {
   border: 5px solid #43df1c;
 }
 

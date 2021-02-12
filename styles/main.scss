@@ -178,10 +178,10 @@ h1, h2, h3, h4, h5, h6, p, a{
             overflow: hidden;
 
             &.wrong-border{
-                border: 5px solid rgb(67, 223, 28);
+                border: 5px solid rgb(250, 6, 6);
             }
             &.correct-border{
-                
+                border: 5px solid rgb(67, 223, 28);
             }
 
             &:hover{
