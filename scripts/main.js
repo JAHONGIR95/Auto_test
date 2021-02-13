@@ -283,8 +283,9 @@ function aTagsCreator(processLength) {
 
                 let randomNumberTitle = getRandomInt(selectedArr.length);
                 questionSpace.textContent = selectedArr[randomNumberTitle].title;
-            }
 
+            }
+            
             else{
                 button.classList.add('wrong-border');
 
