@@ -227,7 +227,7 @@ let sectionTwo = document.querySelector('.section2');
 let levelForTest = document.querySelector('#level-for-test');
 // savol maydonchasi
 let questionSpace = document.querySelector('#question-space');
-
+let modal = document.querySelector('.modal');
 // sahifa yuklangandagi ilk bajariladagan holat va funksiyalar bu -
 // window.addEventListener('load', () => {
 //     aTagsCreator(levelForTest.value);
@@ -252,7 +252,7 @@ startBtn.addEventListener('click', function () {
         timingFunction(givenTime);
           
         givenTime--;
-    }, 500);
+    }, 300);
 })
 
 function timingFunction(givenTime1) {
@@ -267,6 +267,7 @@ function timingFunction(givenTime1) {
             button.style.cursor = 'not-allowed';
             button.style.transform = 'scale(1)';
         })
+        modal.classList.add('active');
     }
 
     minute = Math.floor(givenTime1 / 60);
@@ -323,9 +324,10 @@ function aTagsCreator(processLength) {
                 questionSpace.setAttribute('data-id', selectedArr[randomNumberTitle].id);
 
                 console.log(selectedArr.length);
-                if (selectedArr.length <= 18) {
+                if (selectedArr.length <= 19) {
                 //    alert('great')
-                   timingFunction(0);
+                    modal.classList.add('active');
+                    timingFunction(0);
                 }
 
             } else {

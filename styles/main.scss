@@ -234,6 +234,7 @@ h1, h2, h3, h4, h5, h6, p, a{
             transition: all ease .5s;
             border-radius: 5px;
             overflow: hidden;
+            border: 1px solid #fff;
 
             &.wrong-border{
                 border: 5px solid rgb(250, 6, 6);
