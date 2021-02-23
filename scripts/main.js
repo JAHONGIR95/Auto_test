@@ -249,13 +249,8 @@ startBtn.addEventListener('click', function () {
 
      setInt = setInterval(() => {
 
-
-        // if (givenTime == 0) {
-        //     // alert('hello')
-        // }
         timingFunction(givenTime);
-        
-        
+          
         givenTime--;
     }, 500);
 })
