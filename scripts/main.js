@@ -237,6 +237,7 @@ let questionSpace = document.querySelector('#question-space');
 levelForTest.addEventListener('change', (e) => aTagsCreator(e.target.value))
 
 // start button bosilganda savollar oynasining ochilish hodisasi
+let setInt = 0;
 startBtn.addEventListener('click', function () {
     sectionOne.classList.remove('active');
     sectionTwo.classList.add('active');
@@ -244,11 +245,46 @@ startBtn.addEventListener('click', function () {
 
     aTagsCreator(levelForTest.value)
 
+    let givenTime = 10;
+
+     setInt = setInterval(() => {
+
+
+        // if (givenTime == 0) {
+        //     // alert('hello')
+        // }
+        timingFunction(givenTime);
+        
+        
+        givenTime--;
+    }, 500);
 })
+
+function timingFunction(givenTime1) {
+    
+    if (givenTime1 == 0) {
+        clearInterval(setInt)
+        let buttons = document.querySelectorAll('.question-area');
+        console.log(buttons);
+        buttons.forEach(button => {
+            button.disabled = true;
+            button.style.opacity = .5;
+            button.style.cursor = 'not-allowed';
+            button.style.transform = 'scale(1)';
+        })
+    }
+
+    minute = Math.floor(givenTime1 / 60);
+    second = givenTime1 % 60;
+
+    console.log(minute, second);
+}
+
+
 
 // rasm chiqadigan maydonlarni yaratadigan function bu - 
 function aTagsCreator(processLength) {
-    console.log('level' + processLength);
+    // console.log('level' + processLength);
     // bu code maydonni tozalab tashlash uchun ishlatiladi
     randomSelectingItems(processLength);
     quizOptions.textContent = '';
@@ -270,13 +306,15 @@ function aTagsCreator(processLength) {
     }
 
     let btn = document.querySelectorAll('.question-area');
-    console.log(btn);
-    // let images = document.querySelectorAll('.image-area');
+    // console.log(btn);
+    // let images = doc1ument.querySelectorAll('.image-area');
     btn.forEach(button => {
         button.addEventListener('click', () => {
             if (button.dataset.imageId == questionSpace.dataset.id) {
                 button.style.opacity = '.6';
                 button.style.backgroundColor = 'grey';
+                button.style.cursor = 'not-allowed';
+                button.style.transform = 'scale(1)';
                 button.disabled = true;
                 selectedArr = selectedArr.filter(el => el.id != button.dataset.imageId)
                 console.log(selectedArr);
@@ -290,11 +328,10 @@ function aTagsCreator(processLength) {
                 questionSpace.setAttribute('data-id', selectedArr[randomNumberTitle].id);
 
                 console.log(selectedArr.length);
-                if(selectedArr.length <= 18){
-                    alert('tugadi!')
+                if (selectedArr.length <= 18) {
+                //    alert('great')
+                   timingFunction(0);
                 }
-
-
 
             } else {
                 button.classList.add('wrong-border');
