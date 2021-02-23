@@ -241,7 +241,7 @@ startBtn.addEventListener('click', function () {
     sectionOne.classList.remove('active');
     sectionTwo.classList.add('active');
 
-    
+
     aTagsCreator(levelForTest.value)
 
 })
@@ -254,17 +254,17 @@ function aTagsCreator(processLength) {
     quizOptions.textContent = '';
     let randomNumberTitle = getRandomInt(processLength);
     for (i = 1; i <= processLength; i++) {
-    // let randomNumberImage = getRandomInt(processLength);
-        
+        // let randomNumberImage = getRandomInt(processLength);
+
         let aTag = document.createElement('button');
         let image = document.createElement('img');
         image.setAttribute('src', `${selectedArr[i-1].source}`);
         image.setAttribute('class', 'image-area');
-        aTag.setAttribute('data-image-id', selectedArr[i-1].id)
+        aTag.setAttribute('data-image-id', selectedArr[i - 1].id)
         aTag.setAttribute('class', 'question-area');
         questionSpace.textContent = selectedArr[randomNumberTitle].title;
         questionSpace.setAttribute('data-id', selectedArr[randomNumberTitle].id)
-        
+
         quizOptions.appendChild(aTag);
         aTag.appendChild(image);
     }
@@ -277,23 +277,32 @@ function aTagsCreator(processLength) {
             if (button.dataset.imageId == questionSpace.dataset.id) {
                 button.style.opacity = '.6';
                 button.style.backgroundColor = 'grey';
-                button.disabled = true;  
+                button.disabled = true;
                 selectedArr = selectedArr.filter(el => el.id != button.dataset.imageId)
                 console.log(selectedArr);
 
+                btn.forEach(item => {
+                    item.classList.remove('wrong-border');
+                })
+
                 let randomNumberTitle = getRandomInt(selectedArr.length);
                 questionSpace.textContent = selectedArr[randomNumberTitle].title;
+                questionSpace.setAttribute('data-id', selectedArr[randomNumberTitle].id);
 
-            }
-            
-            else{
+                console.log(selectedArr.length);
+                if(selectedArr.length <= 18){
+                    alert('tugadi!')
+                }
+
+
+
+            } else {
                 button.classList.add('wrong-border');
 
             }
         })
     })
 }
-
 
 
 function randomSelectingItems(num) {
@@ -304,8 +313,8 @@ function randomSelectingItems(num) {
         if (!selectedArr.includes(signsArr[randomNumber])) {
             selectedArr.push(signsArr[randomNumber]);
             i++;
-            
-            
+
+
         }
     }
 }
