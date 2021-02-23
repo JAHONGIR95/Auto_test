@@ -252,10 +252,11 @@ startBtn.addEventListener('click', function () {
         timingFunction(givenTime);
           
         givenTime--;
-    }, 300);
+    }, 50);
 })
 
 let modalValue = document.querySelector('#modal-value');
+let timeTable = document.querySelector('#time-table');
 
 function timingFunction(givenTime1) {
     
@@ -276,6 +277,11 @@ function timingFunction(givenTime1) {
     minute = Math.floor(givenTime1 / 60);
     second = givenTime1 % 60;
 
+    if(second < 10  && second >= 0){
+        timeTable.innerHTML = `0${minute} : 0${second}`;
+    } else{
+        timeTable.innerHTML = `0${minute} : ${second}`;
+    }
     console.log(minute, second);
 }
 
