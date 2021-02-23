@@ -245,7 +245,7 @@ startBtn.addEventListener('click', function () {
 
     aTagsCreator(levelForTest.value)
 
-    let givenTime = 10;
+    let givenTime = 100;
 
      setInt = setInterval(() => {
 
@@ -254,6 +254,8 @@ startBtn.addEventListener('click', function () {
         givenTime--;
     }, 300);
 })
+
+let modalValue = document.querySelector('#modal-value');
 
 function timingFunction(givenTime1) {
     
@@ -268,6 +270,7 @@ function timingFunction(givenTime1) {
             button.style.transform = 'scale(1)';
         })
         modal.classList.add('active');
+        modalValue.textContent = 'Game over. Try again';
     }
 
     minute = Math.floor(givenTime1 / 60);
@@ -326,8 +329,9 @@ function aTagsCreator(processLength) {
                 console.log(selectedArr.length);
                 if (selectedArr.length <= 19) {
                 //    alert('great')
-                    modal.classList.add('active');
                     timingFunction(0);
+                    modal.classList.add('active');
+                    modalValue.textContent = 'You win the GAME! Great!';
                 }
 
             } else {
