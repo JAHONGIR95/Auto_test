@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, h6, p, a{
 }
 
 .modal{
-    width: 100;
+    width: 100vw;
     height: 100vh;
     background-color: rgba(12, 12, 12, 0.4);
     position: absolute;
@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6, p, a{
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    transition: all ease .5s;
+    transition: all ease .8s;
     transform-origin: center center;
     transform: scale(0);
 
@@ -41,11 +41,21 @@ h1, h2, h3, h4, h5, h6, p, a{
         justify-content: center;
         flex-direction: column;
         color: #fff;
-        border: 2px solid rgb(247, 23, 23);
+        margin: 35px;
+        border: 2px solid rgb(245, 238, 238);
         box-shadow: 0 10px 1px rgba(241, 44, 44, 0.899);
+
+        @media only screen and (max-width: 500px){
+            &{
+                width: 90%;
+                height: 200px;
+                box-shadow: 0 5px 1px rgba(241, 44, 44, 0.899);
+            }
+        }
 
         h1{
             margin-bottom: 50px;
+            text-align: center;
         }
 
         .home{
@@ -54,6 +64,12 @@ h1, h2, h3, h4, h5, h6, p, a{
             margin-bottom: -90px;
             transition: all ease .3s;
             transform-origin: bottom;
+
+            @media only screen and (max-width: 500px){
+                &{
+                    margin-bottom: -60px;
+                }
+            }
 
             &:hover{
                 color: rgb(247, 247, 220);
@@ -223,6 +239,10 @@ h1, h2, h3, h4, h5, h6, p, a{
            font-size: 20px;
            font-weight: 500;
            text-align: center;
+
+           @media only screen and (max-width: 410px){
+               font-size: 18px;
+           }
         }
 
         #time-table{
@@ -251,10 +271,12 @@ h1, h2, h3, h4, h5, h6, p, a{
         flex-wrap: wrap;
         overflow-y: scroll;
 
-        @media only screen and (max-width: 400px){
+        @media only screen and (max-width: 300px){
             &{
                 padding: 15px;
                 height: calc(100% - 110px);
+                justify-content: center;
+                align-items: center;
             }
         }
 
@@ -304,36 +326,50 @@ h1, h2, h3, h4, h5, h6, p, a{
 
             @media only screen and (max-width: 390px){
                 &{
-                    width: 130px;
+                    width: 125px;
                     height: 120px;
                 }
             }
 
-            @media only screen and (max-width: 370px){
+            @media only screen and (max-width: 375px){
                 &{
-                    width: 120px;
-                    height: 120px;
+                    width: 115px;
+                    height: 115px;
                 }
             }
 
-            @media only screen and (max-width: 350px){
+            @media only screen and (max-width: 360px){
                 &{
                     width: 110px;
-                    height: 110px;
+                    height: 100px;
                 }
             }
 
-            @media only screen and (max-width: 330px){
+            @media only screen and (max-width: 348px){
                 &{
                     width: 105px;
                     height: 100px;
                 }
             }
 
-            @media only screen and (max-width: 315px){
+            @media only screen and (max-width: 335px){
                 &{
                     width: 100px;
                     height: 100px;
+                }
+            }
+
+            @media only screen and (max-width: 325px){
+                &{
+                    width: 95px;
+                    height: 95px;
+                }
+            }
+
+            @media only screen and (max-width: 315px){
+                &{
+                    width: 90px;
+                    height: 90px;
                 }
             }
 

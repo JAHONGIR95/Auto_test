@@ -248,7 +248,7 @@ startBtn.addEventListener('click', function () {
         timingFunction(givenTime);
           
         givenTime--;
-    }, 1000);
+    }, 5);
 })
 
 let modalValue = document.querySelector('#modal-value');
