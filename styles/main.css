@@ -111,6 +111,14 @@ h1, h2, h3, h4, h5, h6, p, a {
   position: relative;
 }
 
+.section1 .mobile-title {
+  color: #fff;
+  font-size: 26px;
+  position: absolute;
+  top: 80px;
+  letter-spacing: 1.4px;
+}
+
 .section1 .banner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -134,7 +142,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 }
 
 .section1 .banner #level-for-test, .section1 .banner #time-for-test {
-  width: 110px;
+  width: 130px;
   padding: 5px;
   background: none;
   background: rgba(0, 0, 0, 0.5);
@@ -142,7 +150,7 @@ h1, h2, h3, h4, h5, h6, p, a {
   border: none;
   color: #fff;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: 3px;
   border-radius: 5px;
   border-bottom: 3px solid #fff;
@@ -156,7 +164,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 }
 
 .section1 .banner #start-btn {
-  font-size: 16px;
+  font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 500;
@@ -330,7 +338,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 
 @media only screen and (max-width: 435px) {
   .quiz__options .question-area {
-    width: 140px;
+    width: 135px;
     height: 130px;
   }
 }

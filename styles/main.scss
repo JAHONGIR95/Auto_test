@@ -82,6 +82,14 @@ h1, h2, h3, h4, h5, h6, p, a{
     transition: all ease .5s;
     position: relative;
 
+    .mobile-title{
+        color: #fff;
+        font-size: 26px;
+        position: absolute;
+        top: 80px;
+        letter-spacing: 1.4px;
+    }
+
     .banner{
         display: flex;
         flex-direction: column;
@@ -97,7 +105,7 @@ h1, h2, h3, h4, h5, h6, p, a{
         }
 
         #level-for-test, #time-for-test{
-            width: 110px;
+            width: 130px;
             padding: 5px;
             background: none;
             background: rgba(0, 0, 0, .5);
@@ -105,7 +113,7 @@ h1, h2, h3, h4, h5, h6, p, a{
             border: none;
             color: #fff;
             font-weight: 600;
-            font-size: 16px;
+            font-size: 18px;
             letter-spacing: 3px;
             border-radius: 5px;
             border-bottom: 3px solid #fff;
@@ -117,7 +125,7 @@ h1, h2, h3, h4, h5, h6, p, a{
             }
         }
         #start-btn{
-            font-size: 16px;
+            font-size: 18px;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 500;
@@ -275,7 +283,7 @@ h1, h2, h3, h4, h5, h6, p, a{
 
             @media only screen and (max-width: 435px){
                 &{
-                    width: 140px;
+                    width: 135px;
                     height: 130px;
                 }
             }
