@@ -258,11 +258,12 @@ h1, h2, h3, h4, h5, h6, p, a {
   text-shadow: 2px 2px 5px #000;
   font-size: 20px;
   font-weight: 500;
+  text-align: center;
 }
 
 .quiz__question #time-table {
   position: absolute;
-  top: -45px;
+  top: -50px;
   color: #fff;
   font-size: 26px;
   border-top: 2px solid red;

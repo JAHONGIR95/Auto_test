@@ -313,7 +313,7 @@ function aTagsCreator(processLength) {
     btn.forEach(button => {
         button.addEventListener('click', () => {
             if (button.dataset.imageId == questionSpace.dataset.id) {
-                button.style.opacity = '.6';
+                button.style.opacity = '.4';
                 button.style.backgroundColor = 'grey';
                 button.style.cursor = 'not-allowed';
                 button.style.transform = 'scale(1)';
@@ -354,8 +354,6 @@ function randomSelectingItems(num) {
         if (!selectedArr.includes(signsArr[randomNumber])) {
             selectedArr.push(signsArr[randomNumber]);
             i++;
-
-
         }
     }
 }
