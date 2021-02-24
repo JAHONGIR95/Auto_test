@@ -221,6 +221,7 @@ let sectionOne = document.querySelector('.section1');
 let sectionTwo = document.querySelector('.section2');
 // testning levelini tanlash uchun select bu - 
 let levelForTest = document.querySelector('#level-for-test');
+let timeForTest = document.querySelector('#time-for-test');
 // savol maydonchasi
 let questionSpace = document.querySelector('#question-space');
 let modal = document.querySelector('.modal');
@@ -238,10 +239,9 @@ startBtn.addEventListener('click', function () {
     sectionOne.classList.remove('active');
     sectionTwo.classList.add('active');
 
-
-    aTagsCreator(levelForTest.value)
-
-    let givenTime = 500;
+    let gameType = parseInt(levelForTest.value)
+    aTagsCreator(gameType)
+    let givenTime = parseInt(timeForTest.value) * 60;
 
      setInt = setInterval(() => {
 

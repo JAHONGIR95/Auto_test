@@ -225,9 +225,13 @@ h1, h2, h3, h4, h5, h6, p, a {
   margin-right: auto;
   padding: 25px;
   background-color: rgba(204, 185, 185, 0.6);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .quiz__question {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -268,7 +272,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 }
 
 .quiz__options {
-  width: 94%;
+  max-width: 94%;
   height: calc(100% - 135px);
   background-color: rgba(0, 0, 0, 0.419);
   margin-right: auto;

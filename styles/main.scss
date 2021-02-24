@@ -183,9 +183,11 @@ h1, h2, h3, h4, h5, h6, p, a{
     margin-right: auto;
     padding: 25px;
     background-color: rgba(204, 185, 185, 0.6);
+    box-sizing: border-box;
 
     // savollar paydo bo'ladigan maydon
     &__question{
+        box-sizing: border-box;
         height: 60px;
         display: flex;
         align-items: center;
@@ -222,7 +224,7 @@ h1, h2, h3, h4, h5, h6, p, a{
 
     // variantlar chiqadigan maydon
     &__options{
-        width: 94%;
+        max-width: 94%;
         height: calc(100% - 135px);
         background-color: rgba(0, 0, 0, 0.419);
         margin-right: auto;
