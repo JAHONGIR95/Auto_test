@@ -236,6 +236,13 @@ h1, h2, h3, h4, h5, h6, p, a{
         flex-wrap: wrap;
         overflow-y: scroll;
 
+        @media only screen and (max-width: 400px){
+            &{
+                padding: 15px;
+                height: calc(100% - 110px);
+            }
+        }
+
         // rasmlar ko'rinadigan maydonlar
         .question-area{
             display: inline-block;
@@ -251,6 +258,76 @@ h1, h2, h3, h4, h5, h6, p, a{
             border-radius: 5px;
             overflow: hidden;
             border: 1px solid #fff;
+
+            @media only screen and (max-width: 500px){
+                &{
+                    width: 160px;
+                    height: 150px;
+                }
+            }
+
+            @media only screen and (max-width: 456px){
+                &{
+                    width: 150px;
+                    height: 140px;
+                }
+            }
+
+            @media only screen and (max-width: 435px){
+                &{
+                    width: 140px;
+                    height: 130px;
+                }
+            }
+
+            @media only screen and (max-width: 412px){
+                &{
+                    width: 130px;
+                    height: 120px;
+                }
+            }
+
+            @media only screen and (max-width: 390px){
+                &{
+                    width: 130px;
+                    height: 120px;
+                }
+            }
+
+            @media only screen and (max-width: 370px){
+                &{
+                    width: 120px;
+                    height: 120px;
+                }
+            }
+
+            @media only screen and (max-width: 350px){
+                &{
+                    width: 110px;
+                    height: 110px;
+                }
+            }
+
+            @media only screen and (max-width: 330px){
+                &{
+                    width: 105px;
+                    height: 100px;
+                }
+            }
+
+            @media only screen and (max-width: 315px){
+                &{
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+
+            @media only screen and (max-width: 300px){
+                &{
+                    width: 150px;
+                    height: 120px;
+                }
+            }
 
             &.wrong-border{
                 border: 5px solid rgb(250, 6, 6);

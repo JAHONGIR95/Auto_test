@@ -290,6 +290,13 @@ h1, h2, h3, h4, h5, h6, p, a {
   overflow-y: scroll;
 }
 
+@media only screen and (max-width: 400px) {
+  .quiz__options {
+    padding: 15px;
+    height: calc(100% - 110px);
+  }
+}
+
 .quiz__options .question-area {
   display: inline-block;
   width: 120px;
@@ -305,6 +312,76 @@ h1, h2, h3, h4, h5, h6, p, a {
   border-radius: 5px;
   overflow: hidden;
   border: 1px solid #fff;
+}
+
+@media only screen and (max-width: 500px) {
+  .quiz__options .question-area {
+    width: 160px;
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 456px) {
+  .quiz__options .question-area {
+    width: 150px;
+    height: 140px;
+  }
+}
+
+@media only screen and (max-width: 435px) {
+  .quiz__options .question-area {
+    width: 140px;
+    height: 130px;
+  }
+}
+
+@media only screen and (max-width: 412px) {
+  .quiz__options .question-area {
+    width: 130px;
+    height: 120px;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .quiz__options .question-area {
+    width: 130px;
+    height: 120px;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .quiz__options .question-area {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .quiz__options .question-area {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  .quiz__options .question-area {
+    width: 105px;
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 315px) {
+  .quiz__options .question-area {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .quiz__options .question-area {
+    width: 150px;
+    height: 120px;
+  }
 }
 
 .quiz__options .question-area.wrong-border {
