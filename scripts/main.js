@@ -209,10 +209,6 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
 
-
-
-
-
 // savol chiqadigan maydon
 let quizQuestion = document.querySelector('#quiz__question');
 // savollar yachaykasi bu
@@ -245,14 +241,14 @@ startBtn.addEventListener('click', function () {
 
     aTagsCreator(levelForTest.value)
 
-    let givenTime = 100;
+    let givenTime = 500;
 
      setInt = setInterval(() => {
 
         timingFunction(givenTime);
           
         givenTime--;
-    }, 50);
+    }, 500);
 })
 
 let modalValue = document.querySelector('#modal-value');
@@ -303,6 +299,7 @@ function aTagsCreator(processLength) {
         image.setAttribute('class', 'image-area');
         aTag.setAttribute('data-image-id', selectedArr[i - 1].id)
         aTag.setAttribute('class', 'question-area');
+        console.log(selectedArr)
         questionSpace.textContent = selectedArr[randomNumberTitle].title;
         questionSpace.setAttribute('data-id', selectedArr[randomNumberTitle].id)
 
@@ -328,18 +325,18 @@ function aTagsCreator(processLength) {
                     item.classList.remove('wrong-border');
                 })
 
+                if (selectedArr.length == 0) {
+                     timingFunction(0);
+                     modal.classList.add('active');
+                     modalValue.textContent = 'You win the GAME! Great!';
+                 }
+
                 let randomNumberTitle = getRandomInt(selectedArr.length);
                 questionSpace.textContent = selectedArr[randomNumberTitle].title;
                 questionSpace.setAttribute('data-id', selectedArr[randomNumberTitle].id);
 
                 console.log(selectedArr.length);
-                if (selectedArr.length <= 19) {
-                //    alert('great')
-                    timingFunction(0);
-                    modal.classList.add('active');
-                    modalValue.textContent = 'You win the GAME! Great!';
-                }
-
+                
             } else {
                 button.classList.add('wrong-border');
 
