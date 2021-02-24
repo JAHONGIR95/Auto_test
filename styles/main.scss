@@ -84,10 +84,17 @@ h1, h2, h3, h4, h5, h6, p, a{
 
     .mobile-title{
         color: #fff;
-        font-size: 26px;
+        font-size: 30px;
         position: absolute;
-        top: 80px;
-        letter-spacing: 1.4px;
+        top: 100px;
+        letter-spacing: 1.5px;
+        display: none;
+
+        @media only screen and (max-width: 500px){
+            &{
+                display: block;
+            }
+        }
     }
 
     .banner{
