@@ -232,6 +232,10 @@ let modal = document.querySelector('.modal');
 
 // level tanlash selecti o'zgartirilganda savollar soni uchun ochiladigan maydor ham o'zgaradigan holatdir bu -
 levelForTest.addEventListener('change', (e) => aTagsCreator(e.target.value))
+// levelForTest.addEventListener('change', () => {
+//     console.log(aTagsCreator(parseInt(levelForTest.value)));
+// });
+
 
 // start button bosilganda savollar oynasining ochilish hodisasi
 let setInt = 0;
@@ -248,7 +252,7 @@ startBtn.addEventListener('click', function () {
         timingFunction(givenTime);
           
         givenTime--;
-    }, 1000);
+    }, 100);
 })
 
 let modalValue = document.querySelector('#modal-value');
@@ -259,7 +263,6 @@ function timingFunction(givenTime1) {
     if (givenTime1 == 0) {
         clearInterval(setInt)
         let buttons = document.querySelectorAll('.question-area');
-        console.log(buttons);
         buttons.forEach(button => {
             button.disabled = true;
             button.style.opacity = .5;
@@ -270,6 +273,12 @@ function timingFunction(givenTime1) {
         modalValue.textContent = 'Game over. Try again';
         document.querySelector('#final-answer').pause();
         document.querySelector('#winning').play();
+    }
+
+    if(givenTime1 >= 30){
+        document.querySelector('#main-theme').play();
+    } else {
+        document.querySelector('#main-theme').pause();
     }
 
     if(givenTime1 == 29){
@@ -284,14 +293,33 @@ function timingFunction(givenTime1) {
     } else{
         timeTable.innerHTML = `0${minute} : ${second}`;
     }
-    console.log(minute, second);
 }
 
+let audioChecker = false;
+document.querySelector('.audio-checker').addEventListener('click', function(){
+    this.classList.toggle('not-active');
 
+    audioChecker = !audioChecker;
+
+    if(audioChecker){
+        document.querySelectorAll('.audios').forEach(item => {
+            item.muted = true;
+        })
+        this.innerHTML = '🔇';
+    } else {
+        document.querySelectorAll('.audios').forEach(item => {
+            item.muted = false;
+        })
+        this.innerHTML = '🔉';
+    }
+
+
+    console.log(audioChecker);
+})
 
 // rasm chiqadigan maydonlarni yaratadigan function bu - 
 function aTagsCreator(processLength) {
-    // console.log('level' + processLength);
+    console.log('level' + processLength);
     // bu code maydonni tozalab tashlash uchun ishlatiladi
     randomSelectingItems(processLength);
     quizOptions.textContent = '';
@@ -305,7 +333,6 @@ function aTagsCreator(processLength) {
         image.setAttribute('class', 'image-area');
         aTag.setAttribute('data-image-id', selectedArr[i - 1].id)
         aTag.setAttribute('class', 'question-area');
-        console.log(selectedArr)
         questionSpace.textContent = selectedArr[randomNumberTitle].title;
         questionSpace.setAttribute('data-id', selectedArr[randomNumberTitle].id)
 
@@ -325,7 +352,6 @@ function aTagsCreator(processLength) {
                 button.style.transform = 'scale(1)';
                 button.disabled = true;
                 selectedArr = selectedArr.filter(el => el.id != button.dataset.imageId)
-                console.log(selectedArr);
                 document.querySelector('#correct-answer').play();
 
                 btn.forEach(item => {
@@ -344,7 +370,6 @@ function aTagsCreator(processLength) {
                 questionSpace.textContent = selectedArr[randomNumberTitle].title;
                 questionSpace.setAttribute('data-id', selectedArr[randomNumberTitle].id);
 
-                console.log(selectedArr.length);
                 
             } else {
                 button.classList.add('wrong-border');

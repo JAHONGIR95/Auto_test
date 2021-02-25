@@ -15,7 +15,7 @@
 
     <div class="modal">
         <div class="modal__core">
-           <h1 id="modal-value">You win the GAME! Great!</h1>
+            <h1 id="modal-value">You win the GAME! Great!</h1>
             <a href="index.html" class="home">Go Home</a>
         </div>
     </div>
@@ -46,9 +46,10 @@
         <div class="quiz">
             <div id="quiz__question" class="quiz__question">
                 <h2 class="question-space" id="question-space">
-                    
+
                 </h2>
                 <p id="time-table"></p>
+                <div class="audio-checker">🔉</div>
             </div>
             <div id="quiz__options" class="quiz__options">
 
@@ -56,10 +57,13 @@
         </div>
     </div>
 
-    <audio id="wrong-answer" src="audio/wrong-answer.mp3"></audio>
-    <audio id="correct-answer" src="audio/correct-answer.mp3"></audio>
-    <audio id="final-answer" src="audio/final.mp3"></audio>
-    <audio id="winning" src="audio/winning.mp3"></audio>
+    <div class="audio-wrapper">
+        <audio class="audios" id="wrong-answer" src="audio/wrong-answer.mp3"></audio>
+        <audio class="audios" id="correct-answer" src="audio/correct-answer.mp3"></audio>
+        <audio class="audios" id="final-answer" src="audio/final.mp3"></audio>
+        <audio class="audios" id="winning" src="audio/winning.mp3"></audio>
+        <audio class="audios" id="main-theme" src="audio/main-theme.mp3"></audio>
+    </div>
 
     <!-- <script src="libs/bootstrap/bootstrap.min.js"></script> -->
     <script src="scripts/main.js"></script>

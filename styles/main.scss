@@ -254,7 +254,28 @@ h1, h2, h3, h4, h5, h6, p, a{
             border-bottom: 2px solid red;
             background-color: rgba(189, 189, 189, .8);
             padding: 3px 0;  
+        }
 
+        .audio-checker{
+            position: absolute;
+            right: 10px;
+            cursor: pointer;
+            border: 3px solid rgb(69, 238, 69);
+            padding: 3px;
+            border-radius: 50%;
+            transition: all ease .5s;
+
+            &:hover{
+                box-shadow: 0 0 8px yellow;
+            }
+
+            &.not-active{
+                border: 3px solid red;
+
+                &:hover{
+                    box-shadow: 0 0 8px red;
+                }
+            }
         }
     }
 
@@ -401,4 +422,10 @@ h1, h2, h3, h4, h5, h6, p, a{
     }
 }
 
+.audio-wrapper{
+    display: block;
 
+    &.not-active{
+        display: none;
+    }
+}

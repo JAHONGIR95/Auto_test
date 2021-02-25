@@ -310,6 +310,31 @@ h1, h2, h3, h4, h5, h6, p, a {
   padding: 3px 0;
 }
 
+.quiz__question .audio-checker {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  border: 3px solid #45ee45;
+  padding: 3px;
+  border-radius: 50%;
+  -webkit-transition: all ease .5s;
+  transition: all ease .5s;
+}
+
+.quiz__question .audio-checker:hover {
+  -webkit-box-shadow: 0 0 8px yellow;
+          box-shadow: 0 0 8px yellow;
+}
+
+.quiz__question .audio-checker.not-active {
+  border: 3px solid red;
+}
+
+.quiz__question .audio-checker.not-active:hover {
+  -webkit-box-shadow: 0 0 8px red;
+          box-shadow: 0 0 8px red;
+}
+
 .quiz__options {
   max-width: 94%;
   height: calc(100% - 135px);
@@ -461,5 +486,13 @@ h1, h2, h3, h4, h5, h6, p, a {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.audio-wrapper {
+  display: block;
+}
+
+.audio-wrapper.not-active {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */
