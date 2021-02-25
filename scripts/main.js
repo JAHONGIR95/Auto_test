@@ -268,6 +268,12 @@ function timingFunction(givenTime1) {
         })
         modal.classList.add('active');
         modalValue.textContent = 'Game over. Try again';
+        document.querySelector('#final-answer').pause();
+        document.querySelector('#winning').play();
+    }
+
+    if(givenTime1 == 29){
+        document.querySelector('#final-answer').play();
     }
 
     minute = Math.floor(givenTime1 / 60);
@@ -320,7 +326,7 @@ function aTagsCreator(processLength) {
                 button.disabled = true;
                 selectedArr = selectedArr.filter(el => el.id != button.dataset.imageId)
                 console.log(selectedArr);
-                
+                document.querySelector('#correct-answer').play();
 
                 btn.forEach(item => {
                     item.classList.remove('wrong-border');
