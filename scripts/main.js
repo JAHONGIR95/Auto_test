@@ -248,7 +248,7 @@ startBtn.addEventListener('click', function () {
         timingFunction(givenTime);
           
         givenTime--;
-    }, 5);
+    }, 1000);
 })
 
 let modalValue = document.querySelector('#modal-value');
@@ -320,9 +320,12 @@ function aTagsCreator(processLength) {
                 button.disabled = true;
                 selectedArr = selectedArr.filter(el => el.id != button.dataset.imageId)
                 console.log(selectedArr);
+                
 
                 btn.forEach(item => {
                     item.classList.remove('wrong-border');
+                    item.disabled = false;
+                    item.style.cursor = 'pointer'
                 })
 
                 if (selectedArr.length == 0) {
@@ -339,6 +342,9 @@ function aTagsCreator(processLength) {
                 
             } else {
                 button.classList.add('wrong-border');
+                button.disabled = true;
+                button.style.cursor = 'not-allowed';
+                document.querySelector('#wrong-answer').play();
 
             }
         })
