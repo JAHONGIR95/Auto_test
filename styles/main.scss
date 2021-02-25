@@ -56,6 +56,10 @@ h1, h2, h3, h4, h5, h6, p, a{
         h1{
             margin-bottom: 50px;
             text-align: center;
+
+            @media only screen and (max-width: 500px){
+                margin-bottom: 40px;
+            }
         }
 
         .home{
@@ -67,7 +71,7 @@ h1, h2, h3, h4, h5, h6, p, a{
 
             @media only screen and (max-width: 500px){
                 &{
-                    margin-bottom: -60px;
+                    margin-bottom: -50px;
                 }
             }
 
@@ -259,6 +263,7 @@ h1, h2, h3, h4, h5, h6, p, a{
         .audio-checker{
             position: absolute;
             right: 10px;
+            top: -45px;
             cursor: pointer;
             border: 3px solid rgb(69, 238, 69);
             padding: 3px;
