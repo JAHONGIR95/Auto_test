@@ -229,96 +229,12 @@ let modal = document.querySelector('.modal');
 // window.addEventListener('load', () => {
 //     aTagsCreator(levelForTest.value);
 // })
-
-// level tanlash selecti o'zgartirilganda savollar soni uchun ochiladigan maydor ham o'zgaradigan holatdir bu -
-levelForTest.addEventListener('change', (e) => aTagsCreator(e.target.value))
-// levelForTest.addEventListener('change', () => {
-//     console.log(aTagsCreator(parseInt(levelForTest.value)));
-// });
-
-
-// start button bosilganda savollar oynasining ochilish hodisasi
-let setInt = 0;
-startBtn.addEventListener('click', function () {
-    sectionOne.classList.remove('active');
-    sectionTwo.classList.add('active');
-
-    let gameType = parseInt(levelForTest.value)
-    aTagsCreator(gameType)
-    let givenTime = parseInt(timeForTest.value) * 60;
-
-     setInt = setInterval(() => {
-
-        timingFunction(givenTime);
-          
-        givenTime--;
-    }, 1000);
-})
-
-let modalValue = document.querySelector('#modal-value');
-let timeTable = document.querySelector('#time-table');
-
-function timingFunction(givenTime1) {
-    
-    if (givenTime1 == 0) {
-        clearInterval(setInt)
-        let buttons = document.querySelectorAll('.question-area');
-        buttons.forEach(button => {
-            button.disabled = true;
-            button.style.opacity = .5;
-            button.style.cursor = 'not-allowed';
-            button.style.transform = 'scale(1)';
-        })
-        modal.classList.add('active');
-        modalValue.textContent = 'Game over. Try again';
-        document.querySelector('#final-answer').pause();
-        document.querySelector('#winning').play();
-    }
-
-    if(givenTime1 >= 30){
-        document.querySelector('#main-theme').play();
-    } else {
-        document.querySelector('#main-theme').pause();
-    }
-
-    if(givenTime1 == 29){
-        document.querySelector('#final-answer').play();
-    }
-
-    minute = Math.floor(givenTime1 / 60);
-    second = givenTime1 % 60;
-
-    if(second < 10  && second >= 0){
-        timeTable.innerHTML = `0${minute} : 0${second}`;
-    } else{
-        timeTable.innerHTML = `0${minute} : ${second}`;
-    }
-}
-
-let audioChecker = false;
-document.querySelector('.audio-checker').addEventListener('click', function(){
-    this.classList.toggle('not-active');
-
-    audioChecker = !audioChecker;
-
-    if(audioChecker){
-        document.querySelectorAll('.audios').forEach(item => {
-            item.muted = true;
-        })
-        this.innerHTML = '🔇';
-    } else {
-        document.querySelectorAll('.audios').forEach(item => {
-            item.muted = false;
-        })
-        this.innerHTML = '🔉';
-    }
-
-
-    console.log(audioChecker);
-})
-
-// rasm chiqadigan maydonlarni yaratadigan function bu - 
 function aTagsCreator(processLength) {
+
+    // console.log(processLength.target.value);
+
+    // rasm chiqadigan maydonlarni yaratadigan function bu - 
+    console.log(processLength);
     console.log('level' + processLength);
     // bu code maydonni tozalab tashlash uchun ishlatiladi
     randomSelectingItems(processLength);
@@ -361,16 +277,16 @@ function aTagsCreator(processLength) {
                 })
 
                 if (selectedArr.length == 0) {
-                     timingFunction(0);
-                     modal.classList.add('active');
-                     modalValue.textContent = 'You win the GAME! Great!';
-                 }
+                    timingFunction(0);
+                    modal.classList.add('active');
+                    modalValue.textContent = 'You win the GAME! Great!';
+                }
 
                 let randomNumberTitle = getRandomInt(selectedArr.length);
                 questionSpace.textContent = selectedArr[randomNumberTitle].title;
                 questionSpace.setAttribute('data-id', selectedArr[randomNumberTitle].id);
 
-                
+
             } else {
                 button.classList.add('wrong-border');
                 button.disabled = true;
@@ -381,16 +297,104 @@ function aTagsCreator(processLength) {
         })
     })
 }
+// level tanlash selecti o'zgartirilganda savollar soni uchun ochiladigan maydor ham o'zgaradigan holatdir bu -
+// levelForTest.addEventListener('change', (e) => aTagsCreator(parseInt(e.target.value)))
+
+
+// start button bosilganda savollar oynasining ochilish hodisasi
+let setInt = 0;
+startBtn.addEventListener('click', function () {
+    sectionOne.classList.remove('active');
+    sectionTwo.classList.add('active');
+
+    let gameType = parseInt(levelForTest.value)
+    aTagsCreator(gameType)
+    let givenTime = parseInt(timeForTest.value) * 60;
+
+    setInt = setInterval(() => {
+
+        timingFunction(givenTime);
+
+        givenTime--;
+    }, 1000);
+})
+
+let modalValue = document.querySelector('#modal-value');
+let timeTable = document.querySelector('#time-table');
+
+function timingFunction(givenTime1) {
+
+    if (givenTime1 == 0) {
+        clearInterval(setInt)
+        let buttons = document.querySelectorAll('.question-area');
+        buttons.forEach(button => {
+            button.disabled = true;
+            button.style.opacity = .5;
+            button.style.cursor = 'not-allowed';
+            button.style.transform = 'scale(1)';
+        })
+        modal.classList.add('active');
+        modalValue.textContent = 'Game over. Try again';
+        document.querySelector('#final-answer').pause();
+        document.querySelector('#winning').play();
+    }
+
+    if (givenTime1 >= 30) {
+        document.querySelector('#main-theme').play();
+    } else {
+        document.querySelector('#main-theme').pause();
+    }
+
+    if (givenTime1 == 29) {
+        document.querySelector('#final-answer').play();
+    }
+
+    minute = Math.floor(givenTime1 / 60);
+    second = givenTime1 % 60;
+
+    if (second < 10 && second >= 0) {
+        timeTable.innerHTML = `0${minute} : 0${second}`;
+    } else {
+        timeTable.innerHTML = `0${minute} : ${second}`;
+    }
+}
+
+let audioChecker = false;
+document.querySelector('.audio-checker').addEventListener('click', function () {
+    this.classList.toggle('not-active');
+
+    audioChecker = !audioChecker;
+
+    if (audioChecker) {
+        document.querySelectorAll('.audios').forEach(item => {
+            item.muted = true;
+        })
+        this.innerHTML = '🔇';
+    } else {
+        document.querySelectorAll('.audios').forEach(item => {
+            item.muted = false;
+        })
+        this.innerHTML = '🔉';
+    }
+
+
+    console.log(audioChecker);
+})
+
 
 
 function randomSelectingItems(num) {
-
-    for (i = 1; i <= num;) {
+    console.log(num);
+    for (let i = 1; i <= num;) {
 
         let randomNumber = getRandomInt(signsArr.length);
         if (!selectedArr.includes(signsArr[randomNumber])) {
             selectedArr.push(signsArr[randomNumber]);
             i++;
         }
+        // selectedArr.push(signsArr[randomNumber]);
+
     }
+
+    console.log(selectedArr);
 }
