@@ -315,6 +315,7 @@ startBtn.addEventListener('click', function () {
 
         timingFunction(givenTime);
 
+        // tanlangan vaqt -1 ga kemayasi har bir secondda
         givenTime--;
     }, 1000);
 })
